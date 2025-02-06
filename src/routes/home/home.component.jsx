@@ -1,3 +1,5 @@
+import { Outlet } from 'react-router-dom'
+
 import Mainmenu from '../../components/mainmenu/mainmenu.component.jsx';
 
 const Home = () => {
@@ -31,7 +33,10 @@ const categories = [
 ]
 
   return (
-    <Mainmenu categories={categories} />
+    <div>
+        <Outlet />
+        <Mainmenu categories={categories} />
+    </div>
   );
 };
 
