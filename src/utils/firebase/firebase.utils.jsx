@@ -3,7 +3,8 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth, 
     signInWithRedirect, 
     signInWithPopup, 
-    GoogleAuthProvider 
+    GoogleAuthProvider, 
+    createUserWithEmailAndPassword
 } from 'firebase/auth';
 import { 
     getFirestore,
@@ -20,6 +21,7 @@ const firebaseConfig = {
     messagingSenderId: "954499027294",
     appId: "1:954499027294:web:93146e99f56c4aa3893fcf",
     measurementId: "G-JBN2RF7Z38"
+
   };
 
 const app = initializeApp(firebaseConfig);
@@ -53,10 +55,17 @@ export const createUserDocumentFromAuth = async (userAuth) => {
                 email,
                 createdAt
             });
+
         } catch (error) {
             console.log('error creating user', error.message);
         }
     }
 
     return userDocRef;
+};
+
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+    if (!email || )
+
+    createUserWithEmailAndPassword(auth,email,password)
 };
